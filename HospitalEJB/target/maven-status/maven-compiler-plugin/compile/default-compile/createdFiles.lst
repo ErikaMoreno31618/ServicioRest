@@ -7,7 +7,7 @@ edu\unicundi\hospitalejb\repositoryimp\MedicoRepoImp.class
 edu\unicundi\hospitalejb\repository\IConsultaRepo.class
 edu\unicundi\hospitalejb\interfaces\IConsultaService.class
 edu\unicundi\hospitalejb\logica\MedicoServiceImp.class
-edu\unicundi\hospitalejb\NewSessionBean.class
+edu\unicundi\hospitalejb\repository\PatronFacade.class
 edu\unicundi\hospitalejb\exception\BadRequestException.class
 edu\unicundi\hospitalejb\entity\Medico_.class
 edu\unicundi\hospitalejb\exception\NoContentException.class

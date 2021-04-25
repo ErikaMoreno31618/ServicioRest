@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package edu.unicundi.hospitalejb.logica;
 
 import edu.unicundi.hospitalejb.entity.Medico;
@@ -11,7 +7,7 @@ import edu.unicundi.hospitalejb.exception.IntegridadException;
 import edu.unicundi.hospitalejb.exception.NoContentException;
 import edu.unicundi.hospitalejb.exception.NotFoundObjectException;
 import edu.unicundi.hospitalejb.interfaces.IMedicoService;
-import edu.unicundi.hospitalejb.repository.IMedicoRepo;
+import edu.unicundi.hospitalejb.repositoryimp.MedicoRepoImp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -28,7 +24,7 @@ import javax.ws.rs.NotAllowedException;
 public class MedicoServiceImp implements IMedicoService {
 
     @EJB
-    private IMedicoRepo repo;
+    private MedicoRepoImp repo;
 
     @Override
     public List<Medico> listar() throws NoContentException, NotAllowedException {
@@ -56,7 +52,7 @@ public class MedicoServiceImp implements IMedicoService {
     @Override
     public void eliminar(Integer idMedico) throws NotFoundObjectException, NotAllowedException {
         try {
-            Medico medico = repo.BuscarPorId(idMedico);
+            Medico medico = repo.buscarporId(idMedico);
             if (medico != null) {
                 repo.eliminar(medico);
             } else {
@@ -90,7 +86,6 @@ public class MedicoServiceImp implements IMedicoService {
     public Medico buscarMedico(int id) {
         Medico medico = repo.buscarMedico(id);
         return medico;
-    
     }
 
 }

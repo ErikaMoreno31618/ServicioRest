@@ -14,6 +14,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -26,6 +28,10 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "medico")
+
+@NamedQueries({
+    @NamedQuery(name = "Medico.BuscarCorreo", query = "SELECT me FROM Medico me WHERE me.correo = :parametroCorreo")
+})
 public class Medico implements Serializable { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,6 +46,7 @@ public class Medico implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNacimiento;
     
+
     @Column(name = "correo", nullable= false, length = 60, unique = true)
     private String correo;
 

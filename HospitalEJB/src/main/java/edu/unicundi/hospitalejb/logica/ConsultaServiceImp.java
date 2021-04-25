@@ -12,10 +12,11 @@ import edu.unicundi.hospitalejb.exception.IntegridadException;
 import edu.unicundi.hospitalejb.exception.NoContentException;
 import edu.unicundi.hospitalejb.exception.NotFoundObjectException;
 import edu.unicundi.hospitalejb.interfaces.IConsultaService;
-import edu.unicundi.hospitalejb.repository.IConsultaRepo;
+import edu.unicundi.hospitalejb.repositoryimp.ConsultaRepoImp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
@@ -30,7 +31,7 @@ import javax.ws.rs.NotAllowedException;
 public class ConsultaServiceImp implements IConsultaService {
 
     @EJB
-    private IConsultaRepo repo;
+    private ConsultaRepoImp repo;
 
     @Override
     public List<Consulta> listar() throws NoContentException, NotAllowedException {
@@ -47,7 +48,7 @@ public class ConsultaServiceImp implements IConsultaService {
     public Consulta BuscarPorId(Integer id) throws NoContentException, NotAllowedException, NotFoundObjectException {
         Consulta consulta = repo.buscarConsulta(id);
         return consulta;
-      
+
     }
 
     @Override
@@ -64,7 +65,7 @@ public class ConsultaServiceImp implements IConsultaService {
     public void eliminar(Integer idConsulta) throws NotFoundObjectException, NotAllowedException {
 
         try {
-            Consulta consulta = repo.BuscarPorId(idConsulta);
+            Consulta consulta = repo.buscarporId(idConsulta);
             if (consulta != null) {
                 repo.eliminar(consulta);
             } else {
@@ -77,30 +78,22 @@ public class ConsultaServiceImp implements IConsultaService {
 
     @Override
     public void editar(Consulta consulta) throws IntegridadException, NotFoundObjectException, BadRequestException, NotAllowedException {
-//        Consulta ValidarConsulta = repo.buscarConsulta(consulta.getId());
-//        if (ValidarConsulta == null) {
-//            throw new IntegridadException("La consulta ya existe");
-//        } else {
-//            repo.editar(consulta);
-//        }
-//        
-//        
-//        
-//        if(consulta.getId() == null){
-//     
-//        }
         Consulta ValidarConsulta = repo.buscarConsulta(consulta.getId());
-        
+
         ValidarConsulta.setNombreMedico(consulta.getNombreMedico());
         ValidarConsulta.setFecha(consulta.getFecha());
-        
+
         if (consulta.getDetalleConsulta() != null) {
-//            ValidarMedico.getDireccion().setBarrio(medico.getDireccion().getBarrio());
-//            ValidarMedico.getDireccion().setCodigoPostal(medico.getDireccion().getCodigoPostal());
-           
+            for (DetalleConsulta item : consulta.getDetalleConsulta()) {
+                for (DetalleConsulta item2 : ValidarConsulta.getDetalleConsulta()) {
+                    if (Objects.equals(item.getId(), item2.getId())) {
+                        item2.setDiagnostico(item.getDiagnostico());
+                        item2.setTratamiento(item.getTratamiento());
+                    }
+                }
+            }
         }
-
+        
         repo.editar(ValidarConsulta);
-
     }
 }

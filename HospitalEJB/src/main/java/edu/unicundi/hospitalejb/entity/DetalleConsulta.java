@@ -35,6 +35,7 @@ public class DetalleConsulta implements Serializable {
     @Column(name = "tratamiento", nullable = true, length = 20)
     private String tratamiento;
 
+    //@JsonbTransient
     @ManyToOne
     @JoinColumn(name = "id_consulta", nullable = false)
     private Consulta consulta;

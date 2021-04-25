@@ -11,6 +11,7 @@ import edu.unicundi.hospitalejb.exception.IntegridadException;
 import edu.unicundi.hospitalejb.exception.NoContentException;
 import edu.unicundi.hospitalejb.exception.NotFoundObjectException;
 import edu.unicundi.hospitalejb.repository.IMedicoRepo;
+import edu.unicundi.hospitalejb.repository.PatronFacade;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -25,35 +26,18 @@ import javax.ws.rs.NotAllowedException;
  * @author Erika Moreno
  */
 @Stateless
-public class MedicoRepoImp implements IMedicoRepo {
+public class MedicoRepoImp extends PatronFacade<Medico> implements IMedicoRepo {
 
     @PersistenceContext(unitName = "base")
     private EntityManager em;
 
-    @Override
-    public List<Medico> listar() throws NoContentException, NotAllowedException {
-        TypedQuery<Medico> query = this.em.createQuery("SELECT c from Medico c", Medico.class);
-        return query.getResultList();
+    public MedicoRepoImp() {
+        super(Medico.class);
     }
 
     @Override
-    public Medico BuscarPorId(Integer id) throws NoContentException, NotAllowedException {
-        return em.find(Medico.class, id);
-    }
-
-    @Override
-    public void guardar(Medico medico) throws IntegridadException, BadRequestException, NotAllowedException {
-        em.persist(medico);
-    }
-
-    @Override
-    public void eliminar(Medico medico) throws NotFoundObjectException, NotAllowedException {
-        em.remove(medico);
-    }
-
-    @Override
-    public void editar(Medico medico) throws IntegridadException, NotFoundObjectException, BadRequestException, NotAllowedException {
-        em.merge(medico);
+    protected EntityManager getEntityManager() {
+        return em;
     }
 
     @Override
