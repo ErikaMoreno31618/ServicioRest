@@ -13,8 +13,9 @@ import javax.ws.rs.ext.Provider;
 
 /**
  * Filtro que captura la excepcion que se dispara cuando el recurso pedido no se ha encontrado
- *
- * @author  Erika Moreno
+ * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
  * @version 1.0.0
  */
 @Provider

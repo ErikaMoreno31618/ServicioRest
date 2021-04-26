@@ -10,8 +10,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- *
  * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
+ * @version 1.0.0
  */
 @Entity
 @Table(name = "direccion")

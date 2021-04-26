@@ -8,8 +8,10 @@ import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 
 /**
- *
- * @author martin
+ * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
+ * @version 1.0.0
  */
 @Stateless
 @LocalBean
@@ -18,7 +20,5 @@ public class NewSessionBean {
     public void businessMethod() {
     }
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
 
 }

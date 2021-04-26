@@ -14,8 +14,10 @@ import javax.persistence.EntityManager;
 import javax.ws.rs.NotAllowedException;
 
 /**
- *
  * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
+ * @version 1.0.0
  * @param <T>
  */
 public abstract class PatronFacade<T> {

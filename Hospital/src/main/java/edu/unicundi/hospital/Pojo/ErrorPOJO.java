@@ -11,8 +11,9 @@ import java.util.Date;
 
 /**
  * Envoltorio de error para respuestas
- *
  * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
  * @version 1.0.0
  */
 public class ErrorPOJO implements Serializable {

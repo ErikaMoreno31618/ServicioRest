@@ -24,8 +24,10 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 /**
- *
  * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
+ * @version 1.0.0
  */
 @Entity
 @Table(name = "medico")

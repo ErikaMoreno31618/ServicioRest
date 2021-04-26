@@ -14,6 +14,8 @@ import javax.ws.rs.ext.ExceptionMapper;
  * Filtro que captura las excepciones cuando la sintaxis es invalida
  *
  * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
  * @version 1.0.0
  */
 public class BadRequestExceptionFilter implements ExceptionMapper<BadRequestException>{

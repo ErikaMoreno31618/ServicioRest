@@ -6,8 +6,10 @@
 package edu.unicundi.hospitalejb.exception;
 
 /**
- *
  * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
+ * @version 1.0.0
  */
 public class BadRequestException extends Exception {
      public BadRequestException(String string) {

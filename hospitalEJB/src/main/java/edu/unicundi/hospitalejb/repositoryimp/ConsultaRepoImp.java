@@ -10,8 +10,10 @@ import javax.persistence.PersistenceContext;
 
 
 /**
- *
  * @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
+ * @version 1.0.0
  */
 @Stateless
 public class ConsultaRepoImp extends PatronFacade<Consulta> {

@@ -12,8 +12,9 @@ import javax.ws.rs.ext.Provider;
 
 /**
  * Filtro que captura las excepciones que se disparan y no esten filtradas
- *
- * @author Erika Moreno
+  @author Erika Moreno
+ * @author Anderson Nevao
+ * @since  25/04/2021 
  * @version 1.0.0
  */
 @Provider
