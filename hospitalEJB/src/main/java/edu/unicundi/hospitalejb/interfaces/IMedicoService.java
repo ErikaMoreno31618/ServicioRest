@@ -5,6 +5,7 @@
  */
 package edu.unicundi.hospitalejb.interfaces;
 
+import edu.unicundi.hospitalejb.dto.vistaDTO;
 import edu.unicundi.hospitalejb.entity.Medico;
 import edu.unicundi.hospitalejb.exception.BadRequestException;
 import edu.unicundi.hospitalejb.exception.IntegridadException;
@@ -28,4 +29,5 @@ public interface IMedicoService {
     public void eliminar(Integer idMedico) throws NotFoundObjectException, NotAllowedException;
     public void editar(Medico medico)throws IntegridadException, NotFoundObjectException, BadRequestException, NotAllowedException;
     public Medico buscarMedico(int id);
+    public List<vistaDTO> listarVistaMedicos();
 }

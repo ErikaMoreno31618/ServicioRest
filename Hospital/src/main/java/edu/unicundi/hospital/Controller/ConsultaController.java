@@ -5,6 +5,7 @@
  */
 package edu.unicundi.hospital.Controller;
 
+import edu.unicundi.hospitalejb.dto.ConsultaDTO;
 import edu.unicundi.hospitalejb.entity.Consulta;
 import edu.unicundi.hospitalejb.exception.BadRequestException;
 import edu.unicundi.hospitalejb.exception.IntegridadException;
@@ -26,6 +27,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import org.modelmapper.ModelMapper;
 
 /**
  * @author Erika Moreno
@@ -51,7 +53,10 @@ public class ConsultaController {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response guardar (@Valid Consulta consulta) throws IntegridadException, BadRequestException {
+    public Response guardar (ConsultaDTO consultadto) throws IntegridadException, BadRequestException {
+     
+        ModelMapper modelMapper = new ModelMapper();
+        Consulta consulta = modelMapper.map(consultadto, Consulta.class);
         service.guardar(consulta);
         return Response.status(Response.Status.CREATED).entity("Se ha creado satisfactoriamente.").build();
     }

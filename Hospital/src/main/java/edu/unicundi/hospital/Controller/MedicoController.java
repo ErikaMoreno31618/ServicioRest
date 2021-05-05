@@ -5,6 +5,7 @@
  */
 package edu.unicundi.hospital.Controller;
 
+import edu.unicundi.hospitalejb.dto.vistaDTO;
 import edu.unicundi.hospitalejb.entity.Medico;
 import edu.unicundi.hospitalejb.exception.BadRequestException;
 import edu.unicundi.hospitalejb.exception.IntegridadException;
@@ -79,6 +80,14 @@ public class MedicoController {
     public Response editar(@Valid Medico medico) throws IntegridadException, NotFoundObjectException, BadRequestException {
         service.editar(medico);
         return Response.status(Response.Status.OK).entity("Se ha editado satisfactoriamente.").build();
+    }
+    
+    @Path("/vistaMedico")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response vistaMedico() throws NoContentException {
+        List<vistaDTO> vistasMedico = service.listarVistaMedicos();
+        return Response.status(Response.Status.OK).entity(vistasMedico).build();
     }
 
 }

@@ -5,11 +5,14 @@
  */
 package edu.unicundi.hospitalejb.repositoryimp;
 
+import edu.unicundi.hospitalejb.dto.vistaDTO;
 import edu.unicundi.hospitalejb.entity.Medico;
 import edu.unicundi.hospitalejb.repository.PatronFacade;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 
 /**
@@ -32,6 +35,11 @@ public class MedicoRepoImp extends PatronFacade<Medico>  {
     protected EntityManager getEntityManager() {
         return em;
     }
-
-
+    
+    public  List<vistaDTO>  consultaMedicosView(){
+     
+        TypedQuery<vistaDTO> query = (TypedQuery<vistaDTO>) em.createNativeQuery("SELECT * FROM public.view_consultasdemedicos");
+        return query.getResultList();  
+    }
+    
 }

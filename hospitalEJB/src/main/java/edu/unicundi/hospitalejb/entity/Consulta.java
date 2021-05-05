@@ -8,6 +8,7 @@ package edu.unicundi.hospitalejb.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,9 +16,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,14 +29,16 @@ import javax.persistence.TemporalType;
 /**
  * @author Erika Moreno
  * @author Anderson Nevao
- * @since  25/04/2021 
+ * @since 25/04/2021
  * @version 1.0.0
  */
 @Entity
 @Table(name = "consulta")
 
 @NamedQueries({
-    @NamedQuery(name = "Consulta.listarTodos", query = "SELECT c FROM Consulta c")
+    @NamedQuery(name = "Consulta.listarTodos", query = "SELECT c FROM Consulta c"),
+    @NamedQuery(name = "Consulta.EliminarOptimo", query = "DELETE FROM Consulta c"),
+    @NamedQuery(name = "Consulta.Count", query = "SELECT COUNT(c.id) FROM Consulta c WHERE c.id = :paramId")
 })
 public class Consulta implements Serializable {
 
@@ -48,6 +54,11 @@ public class Consulta implements Serializable {
 
     @OneToMany(mappedBy = "consulta", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<DetalleConsulta> detalleConsulta;
+
+    @JsonbTransient
+    @ManyToOne
+    @JoinColumn(name = "id_medico")
+    private Medico medico;
 
     public Integer getId() {
         return id;
@@ -73,13 +84,20 @@ public class Consulta implements Serializable {
         this.nombreMedico = nombreMedico;
     }
 
-    
     public List<DetalleConsulta> getDetalleConsulta() {
         return detalleConsulta;
     }
 
     public void setDetalleConsulta(List<DetalleConsulta> detalleConsulta) {
         this.detalleConsulta = detalleConsulta;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 
 }

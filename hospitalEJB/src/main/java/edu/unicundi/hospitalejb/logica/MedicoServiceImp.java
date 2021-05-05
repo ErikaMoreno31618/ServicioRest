@@ -1,5 +1,6 @@
 package edu.unicundi.hospitalejb.logica;
 
+import edu.unicundi.hospitalejb.dto.vistaDTO;
 import edu.unicundi.hospitalejb.entity.Medico;
 import edu.unicundi.hospitalejb.exception.BadRequestException;
 import edu.unicundi.hospitalejb.exception.IntegridadException;
@@ -82,6 +83,11 @@ public class MedicoServiceImp implements IMedicoService {
     public Medico buscarMedico(int id) {
         Medico medico = repo.buscarporId(id);
         return medico;
+    }
+
+    @Override
+    public List<vistaDTO> listarVistaMedicos() {
+       return repo.consultaMedicosView();
     }
 
 }

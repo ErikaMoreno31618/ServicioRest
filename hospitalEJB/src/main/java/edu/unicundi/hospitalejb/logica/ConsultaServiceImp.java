@@ -65,9 +65,9 @@ public class ConsultaServiceImp implements IConsultaService {
 
     @Override
     public void eliminar(Integer idConsulta) throws NotFoundObjectException, NotAllowedException {
-            Consulta consulta = repo.buscarporId(idConsulta);
-            if (consulta != null) {
-                repo.eliminar(consulta);
+            int numero = repo.contarSiExiste(idConsulta);
+            if (numero > 0) {
+                repo.eliminarOptimo(idConsulta);
             } else {
                 throw new NotFoundObjectException("Consulta no encontrada");
             }

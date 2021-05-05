@@ -1,3 +1,5 @@
+C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\dto\vistaDTO.java
+C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\dto\DetalleConsultaDTO.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\entity\DetalleConsulta.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\entity\Consulta.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\interfaces\IMedicoService.java
@@ -12,7 +14,10 @@ C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\Hosp
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\repositoryimp\MedicoRepoImp.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\exception\BadRequestException.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\exception\IntegridadException.java
+C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\dto\MedicoDTO.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\repository\IMedicoRepo.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\interfaces\IConsultaService.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\entity\Medico.java
+C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\dto\ConsultaDTO.java
+C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\dto\DireccionDTO.java
 C:\Users\Erika Moreno\Desktop\8SEMESTRE\LineaProfundizacion2\Proyecto2Corte\HospitalRest\hospitalEJB\src\main\java\edu\unicundi\hospitalejb\entity\Direccion.java

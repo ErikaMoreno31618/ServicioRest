@@ -1,42 +1,29 @@
-package edu.unicundi.hospitalejb.entity;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.unicundi.hospitalejb.dto;
 
+import edu.unicundi.hospitalejb.entity.Medico;
 import java.io.Serializable;
-import javax.json.bind.annotation.JsonbTransient;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 /**
+ *
  * @author Erika Moreno
- * @author Anderson Nevao
- * @since  25/04/2021 
- * @version 1.0.0
  */
-@Entity
-@Table(name = "direccion")
-public class Direccion implements Serializable {
-
-    @Id
-    @Column(name = "id")
-    private Integer id;
-
-    @JsonbTransient
-    @OneToOne
-    @MapsId
-    private Medico medico;
-
-    @Column(name = "direccionDetallada", nullable = false, length = 25)
-    private String direccionDetallada;
-
-    @Column(name = "barrio", nullable = false, length = 25)
-    private String barrio;
-
-    @Column(name = "codigoPostal", nullable = false, length = 6)
-    private String codigoPostal;
+class DireccionDTO implements Serializable {
     
+   
+    private Integer id;
+    
+    private Medico medico;
+    
+    private String direccionDetallada;
+    
+    private String barrio;
+    
+    private String codigoPostal;
 
     public Integer getId() {
         return id;
@@ -77,6 +64,6 @@ public class Direccion implements Serializable {
     public void setCodigoPostal(String codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
-
-
+    
+    
 }
